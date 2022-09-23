@@ -5,7 +5,7 @@ import '../../assets/styles/card.css';
 export default function StarShipCard({ image, name, id }) {
   return (
     <Link to={`/starships/${id}`}>
-      <div className="container">
+      <div className="containerMain">
         <div className="wrap">
           <div className="card-wrap">
             <div className="card bloc1">

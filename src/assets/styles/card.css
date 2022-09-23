@@ -1,5 +1,5 @@
 
-.container{
+.containerMain{
     max-height: 400px;
     cursor: pointer;
 }
@@ -10,19 +10,12 @@
   height: 400px;
   position: relative;
   top: 50%;
-  transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  perspective: 1000px;
-  -webkit-perspective: 1000px;
-  transform-style: preserve-3d;
-  -webkit-ransform-style: preserve-3d;
 }
 
 .card-wrap {
   position: relative;
   height: 100%;
   width: 100%;
-  /* transform: rotateY(120deg);*/
 }
 
 .wrap .card {
@@ -34,7 +27,6 @@
   background: #000;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   transform-style: preserve-3d;
-  -webkit-transform-style: preserve-3d;
 }
 
 .wrap .card .text {

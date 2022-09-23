@@ -1,20 +1,19 @@
 import React from 'react';
-import { useLocation } from "react-router-dom"
-import { useCurrentPath } from "../../hooks/useCurrentPath";
+import { useLocation } from 'react-router-dom';
 import { images } from '../../config/imagesConfig';
 import Layout from '../../layouts/Layout';
-import "../../assets/styles/cardDetails.css"
+import '../../assets/styles/cardDetails.css';
 
 function StarShipDetail() {
-  const location = useLocation()
-  console.log(location)
+  const location = useLocation();
+  const id = location.pathname.slice(11);
   return (
     <Layout>
       <div>
         <a href="#" target="_blank">
           <section>
-            <div className="container">
-              <div style={{ backgroundImage: `url(${1})` }} className="background-img">
+            <div className="containerMain">
+              <div style={{ backgroundImage: `url(${images[id]})` }} className="background-img">
                 <div className="box">
                   <span></span>
                   <span></span>

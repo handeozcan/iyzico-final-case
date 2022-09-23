@@ -1,14 +1,13 @@
-.container {
-    padding-top: 20px;
+.containerMain {
     padding-bottom: 20px;
   }
   
   .background-img {
-    height: 400px;
+    height:600px;
     width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
-    margin: 5% auto;
+    margin: 0 auto;
     padding: 20px;
     border: 1px solid #2a3cad;
     border-radius: 4px;
