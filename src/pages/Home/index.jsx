@@ -12,7 +12,7 @@ function Home() {
           className="logo"
         />
         <Link to="/starships">
-          <button>Go to Starships</button>
+          <button>Starships</button>
         </Link>
       </div>
     </div>
