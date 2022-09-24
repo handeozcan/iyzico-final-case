@@ -44,7 +44,8 @@ function StarShips() {
               {group.data.results.map((starship) => (
                 <div key={starship.name}>
                   <StarShipCard
-                    name={starship.model}
+                    model={starship.model}
+                    name={starship.name}
                     id={getId(starship.url)}
                     image={getId(starship.url)}
                   />
