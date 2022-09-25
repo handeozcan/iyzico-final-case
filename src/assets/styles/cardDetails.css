@@ -10,8 +10,8 @@
     margin: 0 auto;
     padding: 20px;
     border-radius: 4px;
-    /* box-shadow: #2a3cad 0px 2px 40px , #2a3cad 0px 2px 40px ; */
-    box-shadow: #2a3cad 5px 5px 50px;
+    box-shadow: #2a3cad 0px 2px 40px , #2a3cad 0px 2px 40px ; 
+    /* box-shadow: #2a3cad 5px 5px 50px;*/
     position: relative;
   }
   

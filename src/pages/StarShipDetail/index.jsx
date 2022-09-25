@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
-import { Button } from '@mantine/core';
+import { Button, useMantineColorScheme } from '@mantine/core';
 import { IconArrowLeft } from '@tabler/icons';
 import { images } from '../../config/imagesConfig';
 import Layout from '../../layouts/Layout';
@@ -21,6 +21,10 @@ function StarShipDetail() {
   if (status !== 'success') return <Error />;
   if (error !== null) return <Error />;
 
+  // fot theming
+  const { colorScheme } = useMantineColorScheme();
+  const dark = colorScheme === 'dark';
+
   const handleBack = () => {
     history('/starships');
   };
@@ -29,9 +33,9 @@ function StarShipDetail() {
       <div>
         <Button
           mb={20}
+          color={dark ? 'gray' : 'dark'}
           leftIcon={<IconArrowLeft />}
-          variant="white"
-          color="gray"
+          variant="outline"
           onClick={handleBack}>
           Go Back
         </Button>
@@ -44,13 +48,13 @@ function StarShipDetail() {
                 <span></span>
                 <span></span>
                 <div className="content">
-                  <h1>{data.data.name} </h1>
+                  <h1>Name : {data.data.name} </h1>
                   <h2>Model : {data.data.model} </h2>
-                  <h2>{data.data.manufacturer} </h2>
-                  <h2>{data.data.max_atmosphering_speed} </h2>
-                  <h2>{data.data.crew} </h2>
-                  <h2>{data.data.passengers} </h2>
-                  <h2>{data.data.cargo_capacity} </h2>
+                  <h2>Manufacturer : {data.data.manufacturer} </h2>
+                  <h2>Max Atmosphering Speed : {data.data.max_atmosphering_speed} </h2>
+                  <h2>Crew : {data.data.crew} </h2>
+                  <h2>Passengers : {data.data.passengers} </h2>
+                  <h2>Cargo Capacity : {data.data.cargo_capacity} </h2>
                 </div>
               </div>
             </div>

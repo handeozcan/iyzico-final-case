@@ -1,13 +1,13 @@
 import { createBrowserRouter } from 'react-router-dom';
 import Error from '../pages/Error';
-import App from '../App';
+import Home from '../pages/Home';
 import StarShips from '../pages/StarShips';
 import StarShipDetail from '../pages/StarShipDetail';
 
 export const router = createBrowserRouter([
   {
     path: '/',
-    element: <App />,
+    element: <Home />,
     errorElement: <Error />
   },
   {
