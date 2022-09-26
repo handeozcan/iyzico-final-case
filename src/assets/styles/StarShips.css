@@ -1,0 +1,24 @@
+.starships_main_layout{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 50px;
+    padding: 10px;
+    margin: 50px;
+}
+
+@media screen and (max-width: 1200px) {
+    .starships_main_layout{
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-gap: 50px;
+        padding: 10px;
+        margin: 50px;
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    .starships_main_layout{
+        display: grid;
+        grid-template-columns: auto;
+    }
+  }

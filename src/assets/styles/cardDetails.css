@@ -10,14 +10,10 @@
     margin: 0 auto;
     padding: 20px;
     border-radius: 4px;
-    box-shadow: #2a3cad 0px 2px 40px , #2a3cad 0px 2px 40px ; 
-    /* box-shadow: #2a3cad 5px 5px 50px;*/
+    box-shadow: #2a3cad  0px 2px 8px 0px;
     position: relative;
   }
   
-  .content h2 {
-    font-size: 19px;
-  }
   
   .box {
     position: absolute;
@@ -62,6 +58,29 @@
     padding: 20px;
     text-align: center;
     box-shadow: 0 5px 10px rgba(9, 0, 0, 0.5);
+  }
+
+  .content p:nth-child(1){
+    font-size: 1.8rem;
+  }
+
+  .content p:nth-child(2) {
+    font-size: 1.4rem;
+  }
+  .content p:nth-child(3) {
+    font-size: 1.4rem;
+  }
+  .content p:nth-child(4) {
+    font-size: 1.4rem;
+  }
+  .content p:nth-child(5) {
+    font-size: 1.4rem;
+  }
+  .content p:nth-child(6) {
+    font-size: 1.4rem;
+  }
+  .content p:nth-child(7) {
+    font-size: 1.4rem;
   }
   
   .box span {
@@ -116,5 +135,75 @@
     100% {
       transform: scaleX(0);
       transform-origin: right;
+    }
+  }
+
+  @media screen and (max-width: 850px) {
+    .background-img {
+      width: 550px;
+      height: 365px;
+    }
+
+    .box {
+      width: 250px;
+      height: 250px
+    
+    }
+
+    .content p:nth-child(1){
+      font-size: 1.5rem;
+    }
+  
+    .content p:nth-child(2) {
+      font-size: 1rem;
+    }
+    .content p:nth-child(3) {
+      font-size: 1rem;
+    }
+    .content p:nth-child(4) {
+      font-size: 1rem;
+    }
+    .content p:nth-child(5) {
+      font-size: 1rem;
+    }
+    .content p:nth-child(6) {
+      font-size: 1rem;
+    }
+    .content p:nth-child(7) {
+      font-size: 1rem;
+    }
+  }
+
+  @media screen and (max-width: 620px) {
+    .background-img {
+      width: 350px;
+      height: 233px;
+    }
+    .box {
+      width: 150px;
+      height: 150px;
+    }
+
+    .content p:nth-child(1){
+      font-size: 1rem;
+    }
+  
+    .content p:nth-child(2) {
+      font-size: 0.5rem;
+    }
+    .content p:nth-child(3) {
+      font-size: 0.5rem;
+    }
+    .content p:nth-child(4) {
+      font-size: 0.5rem;
+    }
+    .content p:nth-child(5) {
+      font-size: 0.5rem;
+    }
+    .content p:nth-child(6) {
+      font-size: 0.5rem;
+    }
+    .content p:nth-child(7) {
+      font-size: 0.5rem;
     }
   }
