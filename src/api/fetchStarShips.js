@@ -1,7 +1,7 @@
 import axios from 'axios';
-import { ROOT } from '../config/config';
+import { baseURL } from '../config/config';
 
 export const fetchStarShips = async (page) => {
-  const { data } = await axios.get(ROOT + '/starships?page=' + page);
+  const { data } = await axios.get(baseURL + '/starships?page=' + page);
   return data;
 };

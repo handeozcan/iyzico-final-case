@@ -1,7 +1,7 @@
 import axios from 'axios';
-import { ROOT } from '../config/config';
+import { baseURL } from '../config/config';
 
 export const fetchSingleStarShip = async (id) => {
-  const result = await axios.get(ROOT + `/starships/${id}`);
+  const result = await axios.get(baseURL + `/starships/${id}`);
   return result;
 };
