@@ -48,13 +48,13 @@ function StarShipDetail() {
                 <span></span>
                 <span></span>
                 <div className="content">
-                  <h1>Name : {data.data.name} </h1>
-                  <h2>Model : {data.data.model} </h2>
-                  <h2>Manufacturer : {data.data.manufacturer} </h2>
-                  <h2>Max Atmosphering Speed : {data.data.max_atmosphering_speed} </h2>
-                  <h2>Crew : {data.data.crew} </h2>
-                  <h2>Passengers : {data.data.passengers} </h2>
-                  <h2>Cargo Capacity : {data.data.cargo_capacity} </h2>
+                  <p>Name : {data.data.name} </p>
+                  <p>Model : {data.data.model} </p>
+                  <p>Manufacturer : {data.data.manufacturer} </p>
+                  <p>Max Atmosphering Speed : {data.data.max_atmosphering_speed} </p>
+                  <p>Crew : {data.data.crew} </p>
+                  <p>Passengers : {data.data.passengers} </p>
+                  <p>Cargo Capacity : {data.data.cargo_capacity} </p>
                 </div>
               </div>
             </div>

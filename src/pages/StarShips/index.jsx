@@ -9,6 +9,7 @@ import {
 } from '@mantine/core';
 import { IconSearch } from '@tabler/icons';
 import ScrollToTop from 'react-scroll-to-top';
+import '../../assets/styles/StarShips.css';
 import Layout from '../../layouts/Layout';
 import StarShipCard from '../../components/Card';
 import { fetchStarShips } from '../../api/fetchStarShips';
@@ -90,14 +91,7 @@ function StarShips() {
       />
 
       <Center>
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'auto auto auto',
-            gridGap: '50px',
-            padding: '10px',
-            margin: '100px'
-          }}>
+        <div className="starships_main_layout">
           {data.map((starship) => {
             if (
               starship.name.toLowerCase().includes(search.toLowerCase()) ||
