@@ -1,12 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {
-  Input,
-  Button,
-  Center,
-  SegmentedControl,
-  Group,
-  useMantineColorScheme
-} from '@mantine/core';
+import { Input, Center, SegmentedControl, Group, useMantineColorScheme } from '@mantine/core';
 import { IconSearch } from '@tabler/icons';
 import ScrollToTop from 'react-scroll-to-top';
 import '../../assets/styles/StarShips.css';
@@ -16,6 +9,7 @@ import { fetchStarShips } from '../../api/fetchStarShips';
 import { getId } from '../../helpers/urlParser';
 import Error from '../Error';
 import Loading from '../Loading';
+import { LoadmoreButton } from '../../components/Button/LoadmoreButton';
 
 function StarShips() {
   const [search, setSearch] = useState('');
@@ -116,31 +110,21 @@ function StarShips() {
       <ScrollToTop smooth />
       {segmentValue ? (
         <Center>
-          <Button
+          <LoadmoreButton
+            onClick={() => handleGetStarShips(page)}
+            dark={dark}
             loading={isLoading}
-            variant="filled"
-            style={{
-              background: dark ? '#ADB5BD' : '#373A40'
-            }}
-            loaderPosition="left"
             disabled={disable}
-            onClick={() => handleGetStarShips(page)}>
-            {disable ? 'Nothing more to load' : 'Load More'}
-          </Button>
+          />
         </Center>
       ) : search.length > 0 ? null : (
         <Center>
-          <Button
+          <LoadmoreButton
+            onClick={() => handleGetStarShips(page)}
+            dark={dark}
             loading={isLoading}
-            variant="filled"
-            style={{
-              background: dark ? '#ADB5BD' : '#373A40'
-            }}
-            loaderPosition="left"
             disabled={disable}
-            onClick={() => handleGetStarShips(page)}>
-            {disable ? 'Nothing more to load' : 'Load More'}
-          </Button>
+          />
         </Center>
       )}
     </Layout>
