@@ -1,23 +1,39 @@
+import React, { Suspense } from 'react';
 import { createBrowserRouter } from 'react-router-dom';
+import Loading from '../pages/Loading';
 import Error from '../pages/Error';
-import Home from '../pages/Home';
-import StarShips from '../pages/StarShips';
-import StarShipDetail from '../pages/StarShipDetail';
+
+// Lazy-loaded
+const Home = React.lazy(() => import('../pages/Home'));
+const StarShips = React.lazy(() => import('../pages/StarShips'));
+const StarShipDetail = React.lazy(() => import('../pages/StarShipDetail'));
 
 export const router = createBrowserRouter([
   {
     path: '/',
-    element: <Home />,
+    element: (
+      <Suspense fallback={<Loading />}>
+        <Home />
+      </Suspense>
+    ),
     errorElement: <Error />
   },
   {
     path: '/starships',
-    element: <StarShips />,
+    element: (
+      <Suspense fallback={<Loading />}>
+        <StarShips />
+      </Suspense>
+    ),
     errorElement: <Error />
   },
   {
     path: '/starships/:id',
-    element: <StarShipDetail />,
+    element: (
+      <Suspense fallback={<Loading />}>
+        <StarShipDetail />
+      </Suspense>
+    ),
     errorElement: <Error />
   }
 ]);
