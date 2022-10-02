@@ -13,17 +13,16 @@ import Loading from '../Loading';
 function StarShipDetail() {
   // its gives current page url
   let { id } = useParams();
+  const { colorScheme } = useMantineColorScheme();
   const history = useNavigate();
   const { status, error, data } = useQuery(['starship', id], () => fetchSingleStarShip(id));
+
+  const dark = colorScheme === 'dark';
 
   if (status === 'loading') return <Loading />;
   if (status === 'error') return <Error />;
   if (status !== 'success') return <Error />;
   if (error !== null) return <Error />;
-
-  // fot theming
-  const { colorScheme } = useMantineColorScheme();
-  const dark = colorScheme === 'dark';
 
   const handleBack = () => {
     history('/starships');
