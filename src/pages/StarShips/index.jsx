@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
+import debounce from 'lodash.debounce';
 import { Input, Center, SegmentedControl, Group, useMantineColorScheme } from '@mantine/core';
 import { IconSearch } from '@tabler/icons';
 import ScrollToTop from 'react-scroll-to-top';
@@ -20,6 +21,14 @@ function StarShips() {
   const [loadingPage, setLoadingPage] = useState(true);
   const [disable, setDisable] = useState(false);
   const [segmentValue, setSegmentValue] = useState(false);
+
+  const handleChange = (event) => {
+    setSearch(event.target.value);
+  };
+
+  const debouncedChangeHandler = useMemo(() => {
+    return debounce(handleChange, 400);
+  }, []);
 
   const handleGetStarShips = () => {
     setIsLoading(true);
@@ -47,6 +56,14 @@ function StarShips() {
 
   useEffect(() => {
     handleGetStarShips();
+  }, []);
+
+  // Stop the invocation of the debounced function
+  // after unmounting
+  useEffect(() => {
+    return () => {
+      debouncedChangeHandler.cancel();
+    };
   }, []);
 
   // fot theming
@@ -80,8 +97,9 @@ function StarShips() {
         placeholder="Search Starships"
         icon={<IconSearch />}
         size="md"
-        value={search}
-        onChange={(event) => setSearch(event.currentTarget.value)}
+        // value={search}
+        type="text"
+        onChange={debouncedChangeHandler}
       />
 
       <Center>
